@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Escritório de Advocacia</title>
     <meta name="description" content="Escritório de Advocacia especializado em direito civil, trabalhista e penal.">
-    <meta property="og:image" content="logo.png">
+    <meta property="og:image" content="balança.jpeg">
     <meta property="og:title" content="Escritório de Advocacia">
     <meta property="og:description" content="Oferecemos soluções jurídicas em diversas áreas do direito.">
     <link rel="stylesheet" href="styles.css">
@@ -59,27 +59,6 @@
             display: none;
             font-size: 1.5rem;
             cursor: pointer;
-        }
-        .hero {
-            background: #2980b9;
-            color: white;
-            padding: 50px 20px;
-            text-align: center;
-            border-radius: 8px;
-        }
-        .hero h2 {
-            font-size: 2rem;
-        }
-        .btn-primary {
-            background: #fff;
-            color: #2980b9;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-        .btn-primary:hover {
-            background: #ecf0f1;
         }
         @media (max-width: 768px) {
             nav ul {
@@ -141,21 +120,6 @@
         button:hover {
             background: #1f618d;
         }
-        .btn-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #2980b9;
-            color: white;
-            padding: 15px;
-            border-radius: 50%;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-        .btn-float:hover {
-            background: #1f618d;
-        }
     </style>
 </head>
 <body>
@@ -164,7 +128,7 @@
             <img src="balança.jpeg" alt="Logo do Escritório">
             <h1>Escritório de Advocacia</h1>
         </div>
-        <div class="menu-toggle" onclick="toggleMenu()" aria-label="Abrir menu">&#9776;</div>
+        <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul>
                 <li><a href="#sobre">Sobre</a></li>
@@ -176,12 +140,6 @@
         </nav>
     </header>
     
-    <section class="hero">
-        <h2>Advocacia de Excelência</h2>
-        <p>Com mais de 20 anos de experiência, somos especializados em diversos ramos do direito.</p>
-        <a href="#servicos" class="btn-primary">Saiba mais</a>
-    </section>
-
     <section id="sobre">
         <h2>Sobre o Advogado</h2>
         <p>Descrição sobre a experiência e áreas de atuação do advogado.</p>
@@ -215,28 +173,20 @@
     <footer>
         <p>&copy; 2025 Escritório de Advocacia. Todos os direitos reservados.</p>
     </footer>
-
-    <a href="#contato" class="btn-float">Contato</a>
-
+    
     <script>
         function consultarProcesso() {
             let numero = document.getElementById("numero-processo").value;
-            if (!numero.match(/^\d{7,15}$/)) {
-                document.getElementById("resultado").textContent = "Por favor, insira um número de processo válido.";
-            } else {
+            if (numero) {
                 window.open(`https://www.tjsp.jus.br/cac?processo=${numero}`, '_blank');
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, insira um número de processo válido.";
             }
         }
-
+        
         function toggleMenu() {
             document.querySelector("nav ul").classList.toggle("show");
         }
-
-        document.querySelectorAll('nav ul li a').forEach(item => {
-            item.addEventListener('click', () => {
-                document.querySelector("nav ul").classList.remove("show");
-            });
-        });
     </script>
 </body>
 </html>
