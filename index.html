@@ -78,6 +78,9 @@
             .menu-toggle {
                 display: block;
             }
+            nav ul li a {
+                padding: 10px;
+            }
         }
         section {
             padding: 30px;
@@ -115,7 +118,6 @@
             cursor: pointer;
             border-radius: 5px;
             font-size: 1rem;
-            transition: 0.3s;
         }
         button:hover {
             background: #1f618d;
@@ -131,11 +133,11 @@
         <div class="menu-toggle" onclick="toggleMenu()">&#9776;</div>
         <nav>
             <ul>
-                <li><a href="#sobre">Sobre</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#processos">Consulta de Processos</a></li>
-                <li><a href="#contato">Contato</a></li>
-                <li><a href="login.html">Área do Cliente</a></li>
+                <li><a href="#sobre" onclick="closeMenu()">Sobre</a></li>
+                <li><a href="#servicos" onclick="closeMenu()">Serviços</a></li>
+                <li><a href="#processos" onclick="closeMenu()">Consulta de Processos</a></li>
+                <li><a href="#contato" onclick="closeMenu()">Contato</a></li>
+                <li><a href="login.html" onclick="closeMenu()">Área do Cliente</a></li>
             </ul>
         </nav>
     </header>
@@ -183,9 +185,13 @@
                 document.getElementById("resultado").textContent = "Por favor, insira um número de processo válido.";
             }
         }
-        
+
         function toggleMenu() {
             document.querySelector("nav ul").classList.toggle("show");
+        }
+
+        function closeMenu() {
+            document.querySelector("nav ul").classList.remove("show");
         }
     </script>
 </body>
