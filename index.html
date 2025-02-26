@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escritório de Advocacia</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ecf0f1;
+            color: #333;
+        }
+        header {
+            background: #2c3e50;
+            color: white;
+            padding: 10px;
+            text-align: center;
+            font-size: 1.2rem;
+            font-weight: bold;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        nav ul li {
+            display: inline;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+        nav ul li a:hover {
+            background: #34495e;
+            border-radius: 5px;
+        }
+        section {
+            padding: 30px;
+            background: white;
+            margin: 20px auto;
+            width: 80%;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #2c3e50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+        button {
+            background: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: 0.3s;
+        }
+        button:hover {
+            background: #2980b9;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px 0;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                text-align: center;
+            }
+            section {
+                width: 90%;
+                padding: 20px;
+            }
+            header {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Escritório de Advocacia</h1>
+        <nav>
+            <ul>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#processos">Consulta de Processos</a></li>
+                <li><a href="#contato">Contato</a></li>
+                <li><a href="login.html">Área do Cliente</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <section id="sobre">
+        <h2>Sobre o Advogado</h2>
+        <p>Descrição sobre a experiência e áreas de atuação do advogado.</p>
+    </section>
+    
+    <section id="servicos">
+        <h2>Serviços</h2>
+        <ul>
+            <li>Direito Civil</li>
+            <li>Direito Trabalhista</li>
+            <li>Direito Penal</li>
+            <li>Consultoria Jurídica</li>
+        </ul>
+    </section>
+    
+    <section id="processos">
+        <h2>Consulta de Processos</h2>
+        <p>Insira o número do processo para consulta:</p>
+        <input type="text" id="numero-processo" placeholder="Digite o número do processo">
+        <button onclick="consultarProcesso()">Consultar</button>
+        <p id="resultado"></p>
+    </section>
+    
+    <section id="contato">
+        <h2>Contato</h2>
+        <p>Email: contato@advocacia.com.br</p>
+        <p>Telefone: (11) 99999-9999</p>
+        <p>Endereço: Rua Exemplo, 123 - São Paulo, SP</p>
+    </section>
+    
+    <footer>
+        <p>&copy; 2025 Escritório de Advocacia. Todos os direitos reservados.</p>
+    </footer>
+    
+    <script>
+        function consultarProcesso() {
+            let numero = document.getElementById("numero-processo").value;
+            if (numero) {
+                window.location.href = `https://www.tjsp.jus.br/cac?processo=${numero}`;
+            } else {
+                document.getElementById("resultado").textContent = "Por favor, insira um número de processo válido.";
+            }
+        }
+    </script>
+</body>
+</html>
